@@ -66,7 +66,7 @@ This document provides solutions to common issues and errors encountered while u
 
 ## Still Having Trouble?
 
-If you've gone through the troubleshooting steps and the issue persists, please open an issue on the [GitHub repository](https://github.com/yourusername/ZVG_UNLOCK_SMQ2/issues), and provide the following information:
+If you've gone through the troubleshooting steps and the issue persists, please open an issue on the [GitHub repository](https://github.com/Vidit-Goel2k/ZVG_UNLOCK_SMQ2/issues), and provide the following information:
 - Error messages or log details.
 - The version of SAP you're using.
 - Steps to reproduce the issue.

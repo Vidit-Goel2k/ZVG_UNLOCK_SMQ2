@@ -41,37 +41,6 @@ Log Results: Success or failure for each queue is logged, providing a clear audi
 Repeat Until Clear: The process repeats in a loop until no more stuck queues are found.
 
 Here's the core code: 💻📜🖋️
-DATA: lt_queues TYPE TABLE OF trfcqview,
-      ls_queue  TYPE trfcqview,
-      lv_tid    TYPE arfctid,
-      lv_cleared TYPE i VALUE 0.
-DO.
-  CLEAR: lt_queues, lv_cleared.
-  CALL FUNCTION 'TRFC_QIN_GET_CURRENT_QUEUES'
-    TABLES
-      qview = lt_queues.
-  IF sy-subrc <> 0 OR lt_queues IS INITIAL.
-    WRITE: / 'No stuck queues found. All queues are cleared.'.
-    EXIT.
-  ENDIF.
-  LOOP AT lt_queues INTO ls_queue.
-    SELECT SINGLE arfcipid INTO lv_tid
-    FROM trfcqin
-    WHERE qname = ls_queue-qname.
-    IF sy-subrc = 0 AND lv_tid IS NOT INITIAL.
-      CALL FUNCTION 'TRFC_QIN_DELETE_LUW'
-        EXPORTING
-          tid = lv_tid.
-      IF sy-subrc = 0.
-        WRITE: / 'Queue unlocked successfully:', ls_queue-qname.
-        ADD 1 TO lv_cleared.
-      ELSE.
-        WRITE: / 'Failed to unlock queue:', ls_queue-qname.
-      ENDIF.
-    ENDIF.
-  ENDLOOP.
-  WRITE: / lv_cleared, 'queues unlocked in this iteration.'.
-ENDDO.
 
 ---
 

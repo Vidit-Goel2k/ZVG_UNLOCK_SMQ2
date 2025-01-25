@@ -24,7 +24,7 @@ To use this program, you need:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/<your-username>/unlock-smq2.git
+   git clone https://github.com/Vidit-Goel2k/unlock-smq2.git
    ```
 
 2. **Upload the ABAP Code:**
@@ -45,6 +45,11 @@ To use this program, you need:
 
 3. **Completion:**
    - Once all stuck queues are cleared, the program will exit with a confirmation message.
+  
+  >   Refer to `./docs/usage.md` for more information and steps to automate execution of this program.
+
+  > Refer to `./docs/troubleshooting.md` for troubleshooting/debugging.
+  
 
 ---
 
@@ -67,10 +72,13 @@ No stuck queues found. All queues are cleared.
 
 Contributions are welcome! If you have suggestions, bug reports, or improvements, please open an issue or submit a pull request.
 
+>Refer `contributing.md` for more information.
+
 ---
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License. 
+>See the `LICENSE` file for details.
 
 ---
 
@@ -79,8 +87,7 @@ For any issues or queries, please contact:
 - **Author**: Vidit Goel
 - **Email**: viditgoel2k@gmail.com
 - **LinkedIn**: [Vidit Goel](https://www.linkedin.com/in/vidit-goel)
-- **GitHub Discussions**: [Open a Discussion](https://github.com/<your-username>/unlock-smq2/discussions)
-- **Issue Tracker**: [Report an Issue](https://github.com/<your-username>/unlock-smq2/issues)
+- **Issue Tracker**: [Report an Issue](https://github.com/Vidit-Goel2k/ZVG_UNLOCK_SMQ2/issues)
 
 ---
 
@@ -92,37 +99,6 @@ For any issues or queries, please contact:
 
 ## Disclaimer
 This program is provided "as is" without any guarantees. Use at your own risk. Ensure proper testing in non-production systems before deployment.
-
----
-
-## Additional Documentation
-
-### Guide: Running the Program in SE38
-
-1. Open transaction SE38 in your SAP system.
-2. Enter the program name `ZVG_UNLOCK_SMQ2`.
-3. Click the execute button (F8).
-4. Monitor the logs in the output screen.
-
----
-
-### Guide: Debugging Common Issues
-
-#### Issue: "No authorization to execute function module"
-- Ensure the user executing the program has the required authorizations for the function modules used.
-- Contact your SAP Basis team to adjust authorizations if needed.
-
-#### Issue: "Queue not unlocked despite successful TID fetch"
-- Verify if the TID fetched belongs to the correct queue.
-- Check for underlying errors in the SMQ2 transaction or system logs (transaction SM21).
-
-#### Issue: "Network-related errors"
-- Ensure stable network connectivity between the application server and the database.
-- Coordinate with your network or Basis team to resolve potential connectivity issues.
-
-#### Issue: "System-level problems"
-- Check for locked resources or contention issues at the system level.
-- Look for logs in transactions SM21 or ST22 to identify and resolve system errors.
 
 ---
 
@@ -141,11 +117,12 @@ If a queue fails to unlock, check the logs for error messages. Additionally, ver
 Yes, the user executing the program should have the necessary authorizations for the function modules and SMQ2.
 
 ### 5. How can I contribute to improving this program?
-You can contribute by submitting pull requests, reporting bugs, or suggesting new features through GitHub Issues or Discussions.
+You can contribute by submitting pull requests, reporting bugs, or suggesting new features through GitHub Issues.
 
 ### 6. What should I do if I encounter network issues while using the program?
 - Ensure the network connection between your application server and database is stable.
 - Contact your Basis or network team to troubleshoot and resolve any network-related issues.
+- refer to `troubleshooting.md`.
 
 ### 7. Are there alternatives to unlocking queues manually?
 Yes, this program provides an automated way to unlock queues that would otherwise require manual intervention. It is designed to save time and reduce human error.
